@@ -71,15 +71,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             if (isOperatorClicked){
                 secondNum += btnText;
-                solutionTv.setText(String.format("%s %s %s", firstNum, operator, secondNum));
+                solutionTv.setText(String.format("%s %s %s",
+                            firstNum, operator, secondNum));
             } else {
                 firstNum += btnText;
                 solutionTv.setText(firstNum);
             }
-        } else if (btnText.equals(ADD) || btnText.equals(SUB) || btnText.equals(MUL) || btnText.equals(DIV)){
+        } else if (btnText.equals(ADD) ||
+                    btnText.equals(SUB) ||
+                    btnText.equals(MUL) ||
+                    btnText.equals(DIV)){
             operator = btnText;
             isOperatorClicked = true;
-            solutionTv.setText(String.format("%s %s", firstNum, operator));
+            solutionTv.setText(String.format("%s %s",
+                                firstNum, operator));
         } else if (btnText.equals(EQUAL)){
             calculate();
             isCalculated = true;
