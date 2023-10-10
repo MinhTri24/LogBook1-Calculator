@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             if (isOperatorClicked){
                 secondNum += btnText;
-                solutionTv.setText(firstNum + " " + operator + " " + secondNum);
+                solutionTv.setText(String.format("%s %s %s", firstNum, operator, secondNum));
             } else {
                 firstNum += btnText;
                 solutionTv.setText(firstNum);
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (btnText.equals(ADD) || btnText.equals(SUB) || btnText.equals(MUL) || btnText.equals(DIV)){
             operator = btnText;
             isOperatorClicked = true;
-            solutionTv.setText(firstNum + " " + operator);
+            solutionTv.setText(String.format("%s %s", firstNum, operator));
         } else if (btnText.equals(EQUAL)){
             calculate();
             isCalculated = true;
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             result = Double.parseDouble(firstNum) * Double.parseDouble(secondNum);
         } else if (operator.equals(DIV)) {
             if (Double.parseDouble(secondNum) == 0){
-                resultTv.setText("Error");
+                resultTv.setText(R.string.error);
                 return;
             }
             result = Double.parseDouble(firstNum) / Double.parseDouble(secondNum);

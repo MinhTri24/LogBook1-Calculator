@@ -19,4 +19,6 @@
     <string name="plus">+</string>
     <string name="calculator">Calculator</string>
     <string name="invalid_input">Invalid input</string>
+    <string name="error">Error</string>
+    <string name="subtraction">-</string>
 </resources>
